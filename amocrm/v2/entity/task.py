@@ -8,7 +8,8 @@ class TasksInteraction(GenericInteraction):
 
 class Task(model.Model):
 
-    name = fields._Field("name")
+    name = fields._Field("id")
+    id = fields._Field("id")
     created_by = fields._Link("created_by", "User")
     updated_by = fields._Link("updated_by", "User")
     created_at = fields._DateTimeField("created_at")
@@ -20,5 +21,7 @@ class Task(model.Model):
     duration_sec = fields._Field("duration")
     complete_till = fields._DateTimeField("complete_till")
     result = fields._Field("text", path=["result"])
+    entity_type = fields._Field("entity_type")
+    entity_id = fields._Field("entity_id")
 
     objects = manager.Manager(TasksInteraction())

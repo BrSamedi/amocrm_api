@@ -9,3 +9,4 @@ from .entity.pipeline import Pipeline, Status
 from .entity.tag import Tag
 from .entity.user import User
 from .entity.events import Event
+from .entity.task import Task
